@@ -7,22 +7,15 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
       body {
-        /* Background properties for both mobile and desktop */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed; /* PC端固定 */
-        min-height: 100vh;
+        /* 背景属性，适用于桌面 */
+        background-size: cover;  /* 背景图像覆盖整个屏幕 */
+        background-position: center;  /* 背景图像居中 */
+        background-repeat: no-repeat;  /* 背景图像不重复 */
+        background-attachment: fixed;  /* 桌面端背景固定 */
+        min-height: 100vh;  /* 最小高度为视口高度 */
         margin: 0;
         padding: 0;
-        background-color: #f0f0f0; /* Example background color */
-      }
-
-      /* Mobile optimization: no fixed background attachment */
-      @media (max-width: 768px) {
-        body {
-          background-attachment: scroll;
-        }
+        background-color: #f0f0f0;  /* 默认背景颜色 */
       }
 
       #root { }
@@ -32,32 +25,29 @@
     <div id="root"></div>
 
     <script type="text/javascript">
-      // --- Random background image setup ---
+      // --- 随机背景图片设置 ---
       const pcImageUrls = [
         'images/pc/1.jpg',
         'images/pc/2.png'
       ];
-      const mobileImageUrls = [
-        'images/pe/1.png',
-      ];
 
       const screenWidth = window.innerWidth;
       const isMobile = screenWidth <= 768;
-      let selectedImageList = isMobile ? mobileImageUrls : pcImageUrls;
+      let selectedImageList = pcImageUrls; // 只使用PC端图片
 
-      // Ensure a valid image list is available
+      // 确保有有效的图片列表
       if (selectedImageList && selectedImageList.length > 0) {
           const randomIndex = Math.floor(Math.random() * selectedImageList.length);
           const randomImageUrl = selectedImageList[randomIndex];
           document.body.style.backgroundImage = `url('${randomImageUrl}')`;
-          console.log(`Set background to: ${randomImageUrl} (Mobile: ${isMobile})`);
+          console.log(`设置背景为：${randomImageUrl} (PC端)`);
       } else {
-          console.warn("Image list is empty for the current device type.");
+          console.warn("图片列表为空。");
       }
 
-      // --- Clarity tracking code ---
+      // --- Clarity 追踪代码 ---
       (function (c, l, a, r, i, t, y) {
-        // ... Clarity code ...
+        // ... Clarity 代码 ...
       })(window, document, "clarity", "script", "khkh4pqrz1");
     </script>
   </body>
