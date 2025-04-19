@@ -1,3 +1,3 @@
 # ciallo
 
-效果网址 [https://ciallo.us.kg](https:/ciallo.us.kg)
+效果网址 [ciallo.us.kg](ciallo.us.kg)
