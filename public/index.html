@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ciallo～(∠·ω&lt; )⌒★</title>
-
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <style>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
       body {
-        /* 移除 background-image 属性，由 JS 设置 */
+        /* Background properties for both mobile and desktop */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -15,12 +15,13 @@
         min-height: 100vh;
         margin: 0;
         padding: 0;
-        background-color: #f0f0f0; /* 示例背景色 */
+        background-color: #f0f0f0; /* Example background color */
       }
 
+      /* Mobile optimization: no fixed background attachment */
       @media (max-width: 768px) {
         body {
-          background-attachment: scroll; /* 我不知道啊 */
+          background-attachment: scroll;
         }
       }
 
@@ -28,11 +29,10 @@
     </style>
   </head>
   <body>
-    <div id="root">
-      </div>
+    <div id="root"></div>
 
     <script type="text/javascript">
-      // --- 背景图片随机设置脚本 ---
+      // --- Random background image setup ---
       const pcImageUrls = [
         'images/pc/1.jpg',
         'images/pc/2.png'
@@ -45,6 +45,7 @@
       const isMobile = screenWidth <= 768;
       let selectedImageList = isMobile ? mobileImageUrls : pcImageUrls;
 
+      // Ensure a valid image list is available
       if (selectedImageList && selectedImageList.length > 0) {
           const randomIndex = Math.floor(Math.random() * selectedImageList.length);
           const randomImageUrl = selectedImageList[randomIndex];
@@ -54,7 +55,7 @@
           console.warn("Image list is empty for the current device type.");
       }
 
-      // --- Clarity追踪代码 ---
+      // --- Clarity tracking code ---
       (function (c, l, a, r, i, t, y) {
         // ... Clarity code ...
       })(window, document, "clarity", "script", "khkh4pqrz1");
